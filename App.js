@@ -10,13 +10,9 @@ const App = () => (
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 25,
-    padding: 10
-  },
-  nav:{
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
+    padding: 10,
+    height: '100%'
+  }
 });
 
 export default App;
