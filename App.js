@@ -1,18 +1,24 @@
+import 'react-native-gesture-handler';
 import React from "react";
-import { StyleSheet, Text, View, Platform } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import About from "./components/About";
+import Alarms from "./components/Alarms";
+
+const Tab = createBottomTabNavigator();
 
 const App = () => (
-    <View style={styles.container}>
-      <About></About>
-    </View>
+    <NavigationContainer>
+        <Tab.Navigator tabBarOptions={{
+            activeBackgroundColor: '#16697a',
+            activeTintColor: 'white',
+            inactiveTintColor: 'gray',
+        }}>
+            <Tab.Screen name="Alarmes" component={Alarms} options={{ title: 'Mes alarmes' }} />
+            <Tab.Screen name="A propos" component={About} />
+        </Tab.Navigator>
+    </NavigationContainer>
 );
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-    height: '100%'
-  }
-});
 
 export default App;
