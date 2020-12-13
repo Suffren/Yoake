@@ -2,9 +2,9 @@ import 'react-native-gesture-handler';
 import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import About from "./components/About";
 import Alarms from "./components/Alarms";
+import SunInfos from "./components/SunInfos";
 
 const Tab = createBottomTabNavigator();
 
@@ -16,7 +16,7 @@ const App = () => (
             inactiveTintColor: 'gray',
         }}>
             <Tab.Screen name="Alarmes" component={Alarms} options={{ title: 'Mes alarmes' }} />
-            <Tab.Screen name="A propos" component={About} />
+            <Tab.Screen name="A propos" component={SunInfos} />
         </Tab.Navigator>
     </NavigationContainer>
 );
